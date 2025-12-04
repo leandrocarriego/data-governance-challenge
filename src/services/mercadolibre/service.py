@@ -96,6 +96,8 @@ class MeliExtractService:
 
         url = f"{self.base_url}/items/{item_id}/description"
 
+        logger.info("Extracting description for item %s", item_id)
+        
         response = self._request("GET", url)
 
         if not response.ok:
