@@ -3,7 +3,6 @@ from fastapi import FastAPI
 
 from src.modules.enrichment.routes import router as enrichment_router
 from src.modules.extract.routes import router as extract_router
-from src.modules.products.routes import router as products_router
 from src.settings import settings
 
 
@@ -21,8 +20,6 @@ logging.basicConfig(
 
 app.include_router(extract_router)
 app.include_router(enrichment_router)
-app.include_router(products_router)
-
 
 @app.get("/health", tags=["meta"])
 def health() -> dict[str, str]:

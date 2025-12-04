@@ -12,7 +12,7 @@ DB_PATH.parent.mkdir(parents=True, exist_ok=True)
 
 def get_connection() -> sqlite3.Connection:
     """Return a SQLite connection with row factory as dict-like rows."""
-    conn = sqlite3.connect(DB_PATH)
-    conn.row_factory = sqlite3.Row
+    connection = sqlite3.connect(DB_PATH)
+    connection.row_factory = sqlite3.Row
 
-    return conn
+    return connection
